@@ -1,0 +1,7 @@
+#AddHandler application/x-httpd-php5 .html .htm
+AddHandler application/x-httpd-php .html .htm
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+ErrorDocument 404 /404.html
